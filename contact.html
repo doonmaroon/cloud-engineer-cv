@@ -58,22 +58,24 @@
 				<div class="inner">
 				  <section>
 					<h1>Contact Form</h1>
-						<form id="contact_form" name="contact_form" method="post" >
+						<form id="contactForm" name="contactForm" action="https://formspree.io/f/mblgwydv" method="post" >
+							<div class="error" id="error"></div>
 							<div class="mb-3">
 							<label for="email_addr">Email address</label>
 							<input type="email" required maxlength="50" class="form-control" 
-							id="email_addr" name="email" placeholder="name@example.com">
+							id="email" name="email" placeholder="name@example.com">
 							</div>
 							<div class="mb-3">
-							<label for="name_input">Name</label>
+							<label for="name">Name</label>
 							<input type="text" required maxlength="50" class="form-control" 
-							id="name_input" name="name" placeholder="Name">
-							</div>            
+							id="name" name="name" placeholder="Name">
+							</div>  
+							<!--          
 							<div class="mb-3">
 								<label for="phone_input">Phone</label>
 								<input type="tel" required maxlength="50" class="form-control" 
 								id="phone_input" name="Phone" placeholder="Phone">
-							</div> 
+							</div> -->
 							<div class="mb-3">
 							<label for="message">Message</label>
 							<textarea class="form-control" id="message" name="message" rows="3"></textarea>
@@ -89,5 +91,35 @@
 		</div>
 	</div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $("#contactForm").on("submit", function(e) {
+	var error = "";
+	var name = $("#name").val().trim();
+	var email = $("#email").val().trim();
+	var message = $("#message").val().trim();
+
+	if (name === "" || email === "" || message === "") {
+	  error = "All fields are required.";
+	} else if (!validateEmail(email)) {
+	  error = "Please enter a valid email address.";
+	}
+
+	if (error) {
+	  e.preventDefault();
+	  $("#error").text(error);
+	} else {
+	  $("#error").text("");
+	}
+  });
+
+  function validateEmail(email) {
+	var re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+	return re.test(email);
+  }
+</script>
+
 </body>
 </html>
