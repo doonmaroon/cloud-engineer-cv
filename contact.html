@@ -10,6 +10,9 @@
 <body>
 	<div class="wraper">
 		<div class="container">
+
+			<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
 		<div class="left-content p-30">
 			<div class="logo">
 				<a href="index.html">
@@ -119,6 +122,12 @@
 	var re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 	return re.test(email);
   }
+
+  // Function to toggle the sidebar
+function toggleSidebar() {
+	const sidebar = document.querySelector('.left-content');
+	sidebar.classList.toggle('collapsed');
+}
 </script>
 
 </body>
