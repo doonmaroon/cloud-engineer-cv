@@ -507,3 +507,35 @@ Page Styles
     font-weight: 500;
     letter-spacing: 5px;
 }
+
+/*===========================================
+hamburger CSS
+============================================*/
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.left-content.collapsed {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+
+.left-content.collapsed + .main-content {
+  margin-left: 0;
+}

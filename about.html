@@ -10,6 +10,8 @@
 <body>
 	<div class="wraper">
 		<div class="container">
+
+			<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 		<div class="left-content p-30">
 			<div class="logo">
 				<a href="index.html">
@@ -87,5 +89,11 @@
 		</div>
 	</div>
 </div>
+<script>
+	function toggleSidebar() {
+	  const sidebar = document.querySelector('.left-content');
+	  sidebar.classList.toggle('collapsed');
+	}
+  </script>  
 </body>
 </html>
