@@ -75,6 +75,12 @@ input:focus, select:focus, textarea:focus, button:focus{
   outline: 0;
 }
 
+iframe {
+  border: none; 
+  width: 75%;
+  height: 500px;
+} 
+
 a {
   color: inherit;
   -webkit-transition: 0.5s;
@@ -485,6 +491,84 @@ Page Styles
     color: #000;
     transform: scale(1.2) translateY(-5px);
 }
+
+.contact-panel {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-form-col {
+    flex: 1 1 420px;
+    min-width: 280px;
+}
+
+.contact-image-col {
+    flex: 0 0 320px;
+    min-width: 220px;
+}
+
+.contact-image-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.mb-3 {
+    margin-bottom: 18px;
+}
+
+.mb-3 label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(0,0,0,0.16);
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 14px;
+    color: #222;
+}
+
+textarea.form-control {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .contact-panel {
+        flex-direction: column;
+    }
+    .contact-image-col {
+        flex: 1 1 100%;
+    }
+}
+
 .sec-title {
     margin-bottom: 50px;
 }
@@ -513,6 +597,7 @@ hamburger CSS
 ============================================*/
 
 .toggle-btn {
+  display: none;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -538,4 +623,137 @@ hamburger CSS
 
 .left-content.collapsed + .main-content {
   margin-left: 0;
+}
+
+/* ============================================
+Mobile Responsive CSS
+============================================ */
+
+/* Tablets and larger devices: 768px and up */
+@media (max-width: 1024px) {
+  .left-content {
+    width: 250px;
+  }
+  
+  .user-profile {
+    padding-left: 30px;
+  }
+}
+
+/* Tablets: 768px and less */
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
+  
+  .container {
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .left-content {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .left-content.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    flex: 1;
+    margin-left: 0;
+    width: 100%;
+    margin-top: 50px;
+    border-left: none;
+  }
+  
+  .p-30 {
+    padding: 20px;
+  }
+  
+  .user-profile {
+    padding-left: 0;
+  }
+  
+  .d-flex-align-center {
+    flex-direction: column;
+  }
+  
+  .user-img {
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .role {
+    font-size: 16px;
+  }
+  
+  .md-hide {
+    display: none !important;
+  }
+}
+
+/* Mobile phones: 480px and less */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  
+  .toggle-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .left-content {
+    width: 100%;
+  }
+  
+  .container {
+    height: auto;
+  }
+  
+  .wraper {
+    height: auto;
+  }
+  
+  .p-30 {
+    padding: 15px;
+  }
+  
+  .nav {
+    margin: 30px 0px;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .name {
+    font-size: 24px;
+  }
+  
+  .sm-text {
+    font-size: 12px;
+  }
+  
+  .role {
+    font-size: 14px;
+  }
+  
+  .sec-title {
+    margin-bottom: 30px;
+  }
 }

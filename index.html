@@ -22,8 +22,8 @@
 				<ul>
 					<li><a href="/index.html">Home</a></li>
 					<li><a href="/about.html">About</a></li>
-					<li><a href="/work profile.html">Work Profile</a></li>
-					<li><a href="/portfolio.html">Portfolio</a></li>
+					<li><a href="/experience.html">Experience</a></li>
+					<li><a href="/mystory.html">Portfolio</a></li>
 					<li><a href="/education.html">Education</a></li>
 					<li><a href="/contact.html">Contact</a></li>
 				</ul>
@@ -33,14 +33,13 @@
 					<ul>
 						<li><a href="https://www.linkedin.com/in/ryan-arthur-2254b644/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 						<li><a href="https://discord.com/users/doonmarooon"><i class="fa fa-brands fa-discord" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="https://github.com/doonmaroon"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 				<div class="foot-contact">
 					<ul>
 						<li>rarthur138@gmail.com</li>
-						<li>703-999-3772</li>
+						<li>703.999.3772</li>
 					</ul>
 				</div>
 				
@@ -55,7 +54,7 @@
 	<div class="pg-title">My Profile</div>
 			</div>
 				<div class="d-flex-align-center">
-				<div class="user-img flex-1"><img src="/img/2023_Colorado_1667_Original.jpg"></div>
+				<div class="user-img flex-1"><img src="/img/funWithGlobe.jpg"></div>
 				<div class="user-profile flex-1">
 					<div class="pro-details">
 						<div class="sm-text">HELLO EVERYBODY, I AM</div>
@@ -64,21 +63,6 @@
 
 					</div>
 					<div class="text">Let's build something together</div>
-					<div class="pr-list">
-						<ul>
-							<li><i class="fa fa-phone" aria-hidden="true"></i> 703-999-3772</li>
-							<li><i class="fa fa-envelope" aria-hidden="true"></i> rarthur138@gmail.com</li>
-							<li><i class="fa fa-map-marker" aria-hidden="true"></i> Durham, NC</li>
-						</ul>
-					</div>
-			<div class="social-icons-head">
-					<ul>
-						<li><a href="https://www.linkedin.com/in/ryan-arthur-2254b644/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href="https://github.com/doonmaroon"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
 
 				</div>
 			</div>
@@ -90,8 +74,18 @@
 <script>
 	function toggleSidebar() {
 	  const sidebar = document.querySelector('.left-content');
-	  sidebar.classList.toggle('collapsed');
+	  sidebar.classList.toggle('open');
 	}
+	
+	// Close sidebar when a nav link is clicked on mobile
+	document.querySelectorAll('.nav a').forEach(link => {
+	  link.addEventListener('click', () => {
+	    const sidebar = document.querySelector('.left-content');
+	    if (window.innerWidth <= 768) {
+	      sidebar.classList.remove('open');
+	    }
+	  });
+	});
   </script>  
 </body>
 </html>
