@@ -491,6 +491,84 @@ Page Styles
     color: #000;
     transform: scale(1.2) translateY(-5px);
 }
+
+.contact-panel {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-form-col {
+    flex: 1 1 420px;
+    min-width: 280px;
+}
+
+.contact-image-col {
+    flex: 0 0 320px;
+    min-width: 220px;
+}
+
+.contact-image-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.mb-3 {
+    margin-bottom: 18px;
+}
+
+.mb-3 label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(0,0,0,0.16);
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 14px;
+    color: #222;
+}
+
+textarea.form-control {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .contact-panel {
+        flex-direction: column;
+    }
+    .contact-image-col {
+        flex: 1 1 100%;
+    }
+}
+
 .sec-title {
     margin-bottom: 50px;
 }
