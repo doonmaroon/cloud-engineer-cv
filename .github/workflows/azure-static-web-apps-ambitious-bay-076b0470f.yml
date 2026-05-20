@@ -19,8 +19,7 @@ jobs:
        contents: read
     steps:
       - name: Fix permissions
-        run: sudo chown -R $USER
-        :$USER $GITHUB_WORKSPACE
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
         with:
           submodules: true
